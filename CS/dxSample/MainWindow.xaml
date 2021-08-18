@@ -1,0 +1,50 @@
+﻿<dx:ThemedWindow
+    x:Class="dxSample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:local="clr-namespace:dxSample"
+    Width="1000"
+    Height="800"
+    Title="MainWindow">
+    <dx:ThemedWindow.DataContext>
+        <local:ViewModel />
+    </dx:ThemedWindow.DataContext>
+    <Grid>
+        <dxdiag:DiagramDesignerControl SelectedStencils="BasicShapes, BasicFlowchartShapes">
+            <dxmvvm:Interaction.Behaviors>
+                <dxdiag:DiagramDataBindingBehavior
+                    ConnectorFromMember="From"
+                    ConnectorsSource="{Binding Connections}"
+                    ConnectorToMember="To"
+                    CustomLayoutItems="DiagramDataBindingBehavior_CustomLayoutItems"
+                    ItemsSource="{Binding Items}"
+                    KeyMember="Id">
+                    <dxdiag:DiagramDataBindingBehavior.TemplateDiagram>
+                        <dxdiag:DiagramControl
+                            CanvasSizeMode="Fill"
+                            SelectedStencils="TemplateDesigner, BasicShapes"
+                            ShowPageBreaks="false">
+                            <dxdiag:DiagramShape
+                                Width="100"
+                                Height="75"
+                                Anchors="Left, Top"
+                                Position="90,60"
+                                Shape="BasicShapes.Rectangle">
+                                <dxdiag:DiagramShape.Bindings>
+                                    <dxdiag:DiagramBinding Expression="Position" PropertyName="Content" />
+                                    <dxdiag:DiagramBinding
+                                        Expression="Position"
+                                        Mode="TwoWay"
+                                        PropertyName="Position" />
+                                </dxdiag:DiagramShape.Bindings>
+                            </dxdiag:DiagramShape>
+                        </dxdiag:DiagramControl>
+                    </dxdiag:DiagramDataBindingBehavior.TemplateDiagram>
+                </dxdiag:DiagramDataBindingBehavior>
+            </dxmvvm:Interaction.Behaviors>
+        </dxdiag:DiagramDesignerControl>
+    </Grid>
+</dx:ThemedWindow>
