@@ -9,7 +9,7 @@ Namespace dxSample
         Inherits ThemedWindow
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
 
         Private Sub DiagramDataBindingBehavior_CustomLayoutItems(ByVal sender As Object, ByVal e As DevExpress.Xpf.Diagram.DiagramCustomLayoutItemsEventArgs)
