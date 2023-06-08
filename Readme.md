@@ -6,7 +6,7 @@
 
 ﻿*Files to look at:*
 * [MainWindow.xaml](./CS/dxSample/MainWindow.xaml)
-* [MainWindow.xaml.cs](./CS/dxSample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/dxSample/MainWIndow.xaml.vb))
+* [MainWindow.xaml.cs](./CS/dxSample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/dxSample/MainWindow.xaml.vb))
 * [ViewModel.cs](./CS/dxSample/ViewModel.cs) (VB: [ViewModel.vb](./VB/dxSample/ViewModel.vb))
 
 # How to bind diagram items' Position to the source objects
